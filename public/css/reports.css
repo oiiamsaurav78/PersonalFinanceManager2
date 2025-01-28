@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9; /* New background color */
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #4CAF50; /* Green theme */
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #4CAF50; /* Green theme for headers */
+}
+
+.summary-box {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.add-goal, .goal-list {
+  margin-bottom: 20px;
+}
+
+.add-goal form, .goal-actions form {
+  margin-bottom: 15px;
+}
+
+.add-goal .form-group {
+  margin-bottom: 10px;
+}
+
+.add-goal input, .goal-actions input {
+  padding: 8px;
+  width: 200px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50; /* Green theme */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.goal-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.goal-info {
+  font-size: 1.1em;
+}
+
+.goal-actions {
+  margin-top: 15px;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  padding: 6px 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+footer {
+  background-color: #4CAF50; /* Green theme */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

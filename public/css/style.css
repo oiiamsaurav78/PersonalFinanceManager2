@@ -1,0 +1,60 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/image/1133960_OQECWT0.jpg"); /* Correct path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    /* color: white; */
+  }
+  
+  
+  /* Centering container */
+  .container {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 30px 50px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  /* Header styles */
+  .header h1 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  /* Button group styles */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Buttons */
+  .btn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  

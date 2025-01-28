@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Goals</title>
+  <link rel="stylesheet" href="/css/goals.css"> <!-- Link to your custom CSS -->
+</head>
+<body>
+
+  <header>
+    <h1>Savings Goals</h1>
+    <nav>
+      <a href="/dashboard">Back to Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Add New Savings Goal Form -->
+    <section class="add-goal">
+      <h2>Add New Savings Goal</h2>
+      <form action="/savingsgoals/add" method="POST">
+        <div class="form-group">
+          <label for="title">Goal Title:</label>
+          <input type="text" id="title" name="title" placeholder="Enter goal title" required>
+        </div>
+        <div class="form-group">
+          <label for="targetAmount">Target Amount:</label>
+          <input type="number" id="targetAmount" name="targetAmount" placeholder="Enter target amount" required>
+        </div>
+        <div class="form-group">
+          <label for="targetDate">Target Date:</label>
+          <input type="date" id="targetDate" name="targetDate" required>
+        </div>
+        <button type="submit">Add Goal</button>
+      </form>
+    </section>
+
+    <!-- Display Existing Savings Goals -->
+    <section class="goal-list">
+      <h2>Your Savings Goals</h2>
+      <% if (savingsGoals && savingsGoals.length > 0) { %>
+        <ul>
+          <% savingsGoals.forEach(goal => { %>
+            <li class="goal-item">
+              <div class="goal-info">
+                <strong><%= goal.title %></strong><br>
+                Target: Rs <%= goal.targetAmount %> by <%= new Date(goal.targetDate).toDateString() %><br>
+                Progress: Rs <%= goal.progress %> (<%= ((goal.progress / goal.targetAmount) * 100).toFixed(2) %>%)<br>
+              </div>
+              <div class="goal-actions">
+                <!-- Update Progress Form -->
+                <form action="/savingsgoals/update/<%= goal._id %>" method="POST" class="inline-form">
+                  <label for="progress-<%= goal._id %>">Add Progress:</label>
+                  <input type="number" id="progress-<%= goal._id %>" name="progress" placeholder="Enter amount" required>
+                  <button type="submit">Update</button>
+                </form>
+                <!-- Delete Goal Form -->
+                <form action="/savingsgoals/delete/<%= goal._id %>" method="POST" class="inline-form">
+                  <button type="submit" class="delete-btn">Delete</button>
+                </form>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>No savings goals found. Start by adding one above!</p>
+      <% } %>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Personal Finance Manager</p>
+  </footer>
+
+</body>
+</html>

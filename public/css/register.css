@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/image/2147748111.jpg"); /* Correct path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    /* color: white; */
+  }
+  /* Container Styles */
+  .container {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 30px 50px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  header h1 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form label {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Button Styles */
+  form button {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  form button:hover {
+    background: #45a049;
+  }
+  
+  /* Link Styles */
+  main p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  main p a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  main p a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/image/2147748111.jpg"); /* Correct path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    /* color: white; */
+  }
+  
+  /* Welcome Header */
+  header h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    font-weight: bold;
+    
+    margin: 0;
+  }
+  
+  /* Login Container */
+  .login-container {
+    background: white; /* White card */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Card shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  /* Login Header */
+  .login-container header h2 {
+    font-size: 1.8rem;
+    color: #2c3e50; /* Dark text */
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    color: #4a4a4a;
+    font-size: 14px;
+  }
+  
+  input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db; /* Light border */
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9fafb; /* Subtle input background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50; /* Green focus border */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    outline: none;
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #4CAF50; /* Green button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background: #45A049; /* Slightly darker green */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    background: #3E8E41;
+  }
+  
+  /* Footer Text and Links */
+  p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  p a {
+    color: #4CAF50; /* Green links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+    color: #388E3C; /* Darker green on hover */
+  }
+  
+  /* Error Message Styles */
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  

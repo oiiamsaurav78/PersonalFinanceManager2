@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <link rel="stylesheet" href="/css/reports.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+</head>
+<body>
+  <header>
+    <h1>Financial Reports</h1>
+    <a href="/dashboard" class="back-link">Back to Dashboard</a>
+  </header>
+  <main>
+    <!-- Summary Section -->
+    <section class="summary">
+      <h2>Summary</h2>
+      <div class="summary-box">
+        <div class="summary-item">
+          <h3>Total Income</h3>
+          <p>Rs <%= totalIncome.toFixed(2) %></p>
+        </div>
+        <div class="summary-item">
+          <h3>Total Expenses</h3>
+          <p>Rs <%= totalExpenses.toFixed(2) %></p>
+        </div>
+        <div class="summary-item">
+          <h3>Remaining Balance</h3>
+          <p>Rs <%= remainingBalance.toFixed(2) %></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transactions Table -->
+    <section>
+      <h2>All Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount (Rs)</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (transactions.length === 0) { %>
+            <tr>
+              <td colspan="4">No transactions found.</td>
+            </tr>
+          <% } else { %>
+            <% transactions.forEach(transaction => { %>
+              <tr>
+                <td><%= new Date(transaction.date).toLocaleDateString() %></td>
+                <td><%= transaction.category %></td>
+                <td>Rs <%= transaction.amount.toFixed(2) %></td>
+                <td><%= transaction.description || "N/A" %></td>
+              </tr>
+            <% }); %>
+          <% } %>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Bar Chart Section -->
+    <section>
+      <h2>Expense vs. Month</h2>
+      <canvas id="expensesChart" width="400" height="200"></canvas> <!-- Chart container -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Personal Finance Manager</p>
+  </footer>
+
+  <!-- Chart.js Script -->
+  <script>
+    const ctx = document.getElementById('expensesChart').getContext('2d');
+    const expensesChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: <%- JSON.stringify(Object.keys(monthlyExpenses)) %>, // Months
+        datasets: [{
+          label: 'Monthly Expenses (Rs)',
+          data: <%- JSON.stringify(Object.values(monthlyExpenses)) %>, // Expense values
+          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Light red
+          borderColor: 'rgba(255, 99, 132, 1)', // Darker red
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Expenses (Rs)'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Months'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top'
+          },
+        }
+      }
+    });
+  </script>
+</body>
+</html>

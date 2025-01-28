@@ -1,0 +1,16 @@
+<header>
+    <h1>Personal Finance Manager</h1>
+    <% if (user) { %>
+      <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/reports">Reports</a>
+        <a href="/auth/logout">Logout</a>
+      </nav>
+    <% } else { %>
+      <nav>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/register">Register</a>
+      </nav>
+    <% } %>
+  </header>
+  

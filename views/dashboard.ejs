@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome, <%= user.name %></h1>
+    <nav class="logout">
+      <a href="/auth/logout" class="logout-link">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Income and Expense Summary Section -->
+    <section class="summary">
+      <div class="summary-box">
+        <!-- Total Income -->
+        <div class="summary-item">
+          <h3>Total Income</h3>
+          <p>Rs <%= totalIncome.toFixed(2) %></p>
+        </div>
+        <!-- Total Expenses -->
+        <div class="summary-item">
+          <h3>Total Expenses</h3>
+          <p>Rs <%= Math.abs(totalExpenses).toFixed(2) %></p>
+        </div>
+        <!-- Quick Links -->
+        <div class="summary-item">
+          <h3>Quick Links</h3>
+          <a href="/reports" class="action-link">View Reports</a>
+          <a href="/savingsgoals" class="action-link">Manage Savings Goals</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transactions and Categories Section -->
+    <section class="data-sections">
+      <!-- Transactions Section -->
+      <div class="transactions">
+        <h2>Your Transactions</h2>
+        <ul>
+          <% transactions.forEach(transaction => { %>
+            <li>
+              <%= transaction.date.toDateString() %> - 
+              <%= transaction.category %>: 
+              Rs <%= transaction.amount %> - 
+              <%= transaction.description || "N/A" %>
+              <a href="/transactions/delete/<%= transaction._id %>" class="delete-link">Delete</a>
+            </li>
+          <% }); %>
+        </ul>
+        <form action="/transactions/add" method="POST">
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" required>
+          
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+          
+          <label for="category">Category:</label>
+          <select id="category" name="category" required>
+            <option value="Income">Income</option>
+            <% categories.forEach(category => { %>
+              <option value="<%= category.name %>"><%= category.name %></option>
+            <% }); %>
+          </select>
+          
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description">
+          
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <!-- Categories Section -->
+      <div class="categories">
+        <h2>Your Categories</h2>
+        <ul>
+          <% categories.forEach(category => { %>
+            <li>
+              <%= category.name %>
+              <a href="/categories/delete/<%= category._id %>" class="delete-link">Delete</a>
+            </li>
+          <% }); %>
+        </ul>
+        <form action="/categories/add" method="POST">
+          <label for="name">Category Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter category name" required>
+          <button type="submit">Add Category</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Personal Finance Manager</p>
+  </footer>
+</body>
+</html>
