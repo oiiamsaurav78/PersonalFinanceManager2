@@ -1,6 +1,6 @@
 const express = require("express");
 const User = require("../models/User");
-const bcrypt = require("bcrypt"); // For password hashing and comparison
+const bcrypt = require("bcrypt"); 
 const router = express.Router();
 
 // Render the login page (GET /auth/login)
@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      // If password is incorrect, render login with an error message
+      
       return res.render("login", { error: "Incorrect password. Please try again." });
     }
 
