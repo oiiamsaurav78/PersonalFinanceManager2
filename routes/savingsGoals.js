@@ -17,7 +17,7 @@ router.get('/', isAuthenticated, async (req, res) => {
 
     
     for (const goal of savingsGoals) {
-      // If the goal is newly created and its progress is still 0, we skip the transaction calculation
+      
       if (goal.progress === 0) {
         continue;
       }
@@ -66,8 +66,8 @@ router.post('/add', isAuthenticated, async (req, res) => {
       progress: 0, 
     });
 
-    await newGoal.save(); // Save the new goal to the database
-    res.redirect('/savingsgoals'); // Redirect to the savings goals page
+    await newGoal.save(); 
+    res.redirect('/savingsgoals'); 
   } catch (error) {
     console.error('Error adding savings goal:', error);
     res.status(500).send('Internal Server Error');
@@ -77,7 +77,7 @@ router.post('/add', isAuthenticated, async (req, res) => {
 // Update a savings goal's progress
 router.post('/update/:id', isAuthenticated, async (req, res) => {
   const goalId = req.params.id;  
-  const { progress } = req.body; // Get the progress value from the form
+  const { progress } = req.body; 
 
   try {
     // Find the goal by ID and update its progress
