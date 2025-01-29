@@ -110,6 +110,10 @@ Ensure that the login form accepts these credentials and grants access to the sy
 Here are some screenshots of the application:
 - **Home:**  
   ![Home](public/screenshot/home.png)
+  - **Login:**  
+  ![Login](public/screenshot/login.png)
+- **Registration:**  
+  ![Registration](public/screenshot/register.png)
 
 - **Dashboard:**  
   ![Dashboard](public/screenshot/dashboard.png)
@@ -117,10 +121,7 @@ Here are some screenshots of the application:
   ![Report](public/screenshot/reports.png)
 - **Goal:**  
   ![Goal](public/screenshot/add-goal.png)
-- **Login:**  
-  ![Login](public/screenshot/login.png)
-- **Registration:**  
-  ![Registration](public/screenshot/register.png)
+
 
 ## Author
 
