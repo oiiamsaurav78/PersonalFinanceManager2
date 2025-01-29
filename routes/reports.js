@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     // Calculate total income
     const totalIncome = incomeTransactions.reduce((sum, t) => sum + t.amount, 0);
 
-    // Calculate total expenses
+    
     const totalExpenses = expenseTransactions.reduce((sum, t) => sum + Math.abs(t.amount), 0);
 
     // Calculate remaining balance
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
       monthlyExpenses[month] = (monthlyExpenses[month] || 0) + Math.abs(transaction.amount);
     });
 
-    // Pass data to the EJS template
+   
     res.render("reports", {
       transactions,
       totalIncome,
