@@ -94,6 +94,17 @@ PERSONALFINANCEMANAGER/
 - `POST /savingsgoals/update/:id` - Update progress on a savings goal
 - `POST /savingsgoals/delete/:id` - Delete a savings goal
 
+  ## Test Cases
+
+### Login Test Case  
+To test the login functionality, use the following credentials:
+
+- **Email:** `syfe@gmail.com`  
+- **Password:** `12345`  
+
+Ensure that the login form accepts these credentials and grants access to the system.
+
+
 ## Screenshots
 
 Here are some screenshots of the application:
