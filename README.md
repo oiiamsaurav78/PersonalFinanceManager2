@@ -99,7 +99,7 @@ PERSONALFINANCEMANAGER/
 Here are some screenshots of the application:
 
 - **Dashboard:**  
-  ![Dashboard](public/screenshot/dashboard.jpg)
+  ![Dashboard](public/screenshot/dashboard.png)
 - **Report:**  
   ![Report](public/screenshot/reports.png)
 - **Goal:**  
