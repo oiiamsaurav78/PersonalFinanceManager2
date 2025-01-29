@@ -1,11 +1,11 @@
 const express = require("express");
-const User = require("../models/User"); // Assuming you have a User model for MongoDB
+const User = require("../models/User");
 const bcrypt = require("bcrypt"); // For password hashing and comparison
 const router = express.Router();
 
 // Render the login page (GET /auth/login)
 router.get("/login", (req, res) => {
-  res.render("login", { error: null }); // Render login.ejs with no error by default
+  res.render("login", { error: null }); 
 });
 
 // Handle login form submission (POST /auth/login)
@@ -17,7 +17,7 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      // If user not found, render login with an error message
+      
       return res.render("login", { error: "User does not exist. Please register first." });
     }
 
@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
 
 // Render the registration page (GET /auth/register)
 router.get("/register", (req, res) => {
-  res.render("register", { error: null }); // Render register.ejs with no error by default
+  res.render("register", { error: null }); 
 });
 
 // Handle registration form submission (POST /auth/register)
@@ -79,18 +79,18 @@ router.post("/register", async (req, res) => {
 // Logout Route (GET /auth/logout)
 router.get("/logout", (req, res) => {
   if (req.session) {
-    // Destroy the session
+    
     req.session.destroy((err) => {
       if (err) {
         console.error("Error logging out:", err);
         return res.status(500).send("Internal Server Error");
       }
 
-      // Redirect to login page after successful logout
+      
       res.redirect("/auth/login");
     });
   } else {
-    // If no session exists, redirect to login
+    
     res.redirect("/auth/login");
   }
 });

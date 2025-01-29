@@ -12,10 +12,10 @@ function isAuthenticated(req, res, next) {
 // Get all savings goals with calculated progress
 router.get('/', isAuthenticated, async (req, res) => {
   try {
-    // Fetch all savings goals for the logged-in user
+   
     const savingsGoals = await SavingsGoal.find({ user: req.session.userId });
 
-    // Loop through each goal to calculate progress
+    
     for (const goal of savingsGoals) {
       // If the goal is newly created and its progress is still 0, we skip the transaction calculation
       if (goal.progress === 0) {
@@ -26,21 +26,21 @@ router.get('/', isAuthenticated, async (req, res) => {
       const transactions = await Transaction.find({
         user: req.session.userId,
         amount: { $gt: 0 }, // Only consider income transactions
-        date: { $lte: goal.targetDate }, // Transactions before the goal's target date
+        date: { $lte: goal.targetDate }, 
       });
 
       // Calculate total income for this goal (sum of all income transactions)
       const totalSavings = transactions.reduce((sum, tx) => sum + tx.amount, 0);
 
-      // Set progress to the total savings amount
+      
       goal.progress = totalSavings;
 
-      // Optionally, cap progress at the target amount, but do it carefully:
+      
       if (goal.progress > goal.targetAmount) {
-        goal.progress = goal.targetAmount; // Cap progress to target amount if exceeded
+        goal.progress = goal.targetAmount; 
       }
 
-      await goal.save(); // Save the updated goal
+      await goal.save(); 
     }
 
     // Render the savingsGoals page, passing the goals to the view
@@ -57,13 +57,13 @@ router.post('/add', isAuthenticated, async (req, res) => {
   const { title, targetAmount, targetDate } = req.body;
 
   try {
-    // Ensure the progress is set to 0 initially
+    
     const newGoal = new SavingsGoal({
       user: req.session.userId,
       title,
       targetAmount,
       targetDate,
-      progress: 0, // Initialize progress to 0
+      progress: 0, 
     });
 
     await newGoal.save(); // Save the new goal to the database
@@ -76,7 +76,7 @@ router.post('/add', isAuthenticated, async (req, res) => {
 
 // Update a savings goal's progress
 router.post('/update/:id', isAuthenticated, async (req, res) => {
-  const goalId = req.params.id;  // Get the goal ID from the URL
+  const goalId = req.params.id;  
   const { progress } = req.body; // Get the progress value from the form
 
   try {
@@ -92,7 +92,7 @@ router.post('/update/:id', isAuthenticated, async (req, res) => {
 
     // Optionally, ensure progress doesn't exceed targetAmount
     if (goal.progress > goal.targetAmount) {
-      goal.progress = goal.targetAmount; // Cap progress to target amount if exceeded
+      goal.progress = goal.targetAmount; 
     }
 
     await goal.save(); // Save the updated goal
@@ -100,7 +100,7 @@ router.post('/update/:id', isAuthenticated, async (req, res) => {
     // Fetch updated savings goals data and render the page again
     const savingsGoals = await SavingsGoal.find({ user: req.session.userId });
 
-    // Render the savingsGoals page with updated data
+    
     res.render('savingsGoals', { savingsGoals });
 
   } catch (error) {
@@ -111,7 +111,7 @@ router.post('/update/:id', isAuthenticated, async (req, res) => {
 
 // Delete a savings goal
 router.post('/delete/:id', isAuthenticated, async (req, res) => {
-  const goalId = req.params.id;  // Get the goal ID from the URL
+  const goalId = req.params.id;  
 
   try {
   

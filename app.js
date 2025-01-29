@@ -43,8 +43,8 @@ app.use("/reports", reportsRoutes);
 // Home Page
 app.get("/", (req, res) => res.render("index"));
 
-// Dashboard Route
-const User = require("./models/User"); // Ensure User model is imported
+ // Ensure User model is imported
+const User = require("./models/User");
 
 // Dashboard Route
 app.get("/dashboard", async (req, res) => {
@@ -52,7 +52,7 @@ app.get("/dashboard", async (req, res) => {
 
   try {
     // Fetch the actual user data based on the session's userId
-    const user = await User.findById(req.session.userId); // Assuming you have a User model
+    const user = await User.findById(req.session.userId); 
 
     if (!user) {
       return res.status(404).send("User not found");
@@ -83,4 +83,4 @@ app.get("/dashboard", async (req, res) => {
 
 // Start the Server
 const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));

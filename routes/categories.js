@@ -58,7 +58,7 @@ router.get("/initialize", async (req, res) => {
       });
   
       if (!incomeCategory) {
-        // Add "Income" category if not found
+        
         await Category.create({
           user: req.session.userId,
           name: "Income",

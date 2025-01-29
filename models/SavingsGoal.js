@@ -5,7 +5,7 @@ const savingsGoalSchema = new mongoose.Schema({
   title: { type: String, required: true },
   targetAmount: { type: Number, required: true },
   targetDate: { type: Date, required: true },
-  progress: { type: Number, default: 0 }, // Ensure this is set to 0 initially
+  progress: { type: Number, default: 0 }, 
 });
 
 module.exports = mongoose.model('SavingsGoal', savingsGoalSchema);

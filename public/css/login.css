@@ -7,11 +7,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("/image/2147748111.jpg"); /* Correct path */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-    /* color: white; */
+    background-image: url("/image/2147748111.jpg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    
   }
   
   /* Welcome Header */
@@ -30,10 +30,10 @@ body {
   
   /* Login Container */
   .login-container {
-    background: white; /* White card */
+    background: white; 
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Card shadow */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -43,7 +43,7 @@ body {
   /* Login Header */
   .login-container header h2 {
     font-size: 1.8rem;
-    color: #2c3e50; /* Dark text */
+    color: #2c3e50; 
     margin-bottom: 20px;
     font-weight: bold;
   }
@@ -78,15 +78,15 @@ body {
   input[type="email"], input[type="password"] {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #d1d5db; /* Light border */
+    border: 1px solid #d1d5db; 
     border-radius: 8px;
     font-size: 16px;
-    background: #f9fafb; /* Subtle input background */
+    background: #f9fafb; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
   input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #4CAF50; /* Green focus border */
+    border-color: #4CAF50; 
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
     outline: none;
   }
@@ -98,7 +98,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background: #4CAF50; /* Green button */
+    background: #4CAF50;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -106,7 +106,7 @@ body {
   }
   
   button:hover {
-    background: #45A049; /* Slightly darker green */
+    background: #45A049; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
@@ -122,7 +122,7 @@ body {
   }
   
   p a {
-    color: #4CAF50; /* Green links */
+    color: #4CAF50; 
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease;
@@ -130,7 +130,7 @@ body {
   
   p a:hover {
     text-decoration: underline;
-    color: #388E3C; /* Darker green on hover */
+    color: #388E3C; 
   }
   
   /* Error Message Styles */

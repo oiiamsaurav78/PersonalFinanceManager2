@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9; /* New background color */
+  background-color: #f4f4f9; 
   margin: 0;
   padding: 0;
   color: #333;
@@ -35,7 +35,7 @@ main {
 
 h2 {
   margin-bottom: 20px;
-  color: #4CAF50; /* Green theme for headers */
+  color: #4CAF50; 
 }
 
 .summary-box {
@@ -94,7 +94,7 @@ table tr:nth-child(even) {
 
 button {
   padding: 10px 15px;
-  background-color: #4CAF50; /* Green theme */
+  background-color: #4CAF50; 
   color: white;
   border: none;
   cursor: pointer;
@@ -103,7 +103,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; 
 }
 
 .goal-item {
@@ -136,7 +136,7 @@ button:hover {
 }
 
 footer {
-  background-color: #4CAF50; /* Green theme */
+  background-color: #4CAF50; 
   color: white;
   text-align: center;
   padding: 10px;

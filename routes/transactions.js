@@ -17,7 +17,7 @@ router.post("/add", async (req, res) => {
 });
 
 router.get("/delete/:id", async (req, res) => {
-    const transactionId = req.params.id; // Get transaction ID from URL
+    const transactionId = req.params.id; L
   
     try {
       // Check if the user is logged in
@@ -28,7 +28,7 @@ router.get("/delete/:id", async (req, res) => {
       // Find and delete the transaction if it belongs to the logged-in user
       await Transaction.findOneAndDelete({
         _id: transactionId,
-        user: req.session.userId, // Ensure ownership
+        user: req.session.userId, 
       });
   
       // Redirect back to the dashboard

@@ -7,10 +7,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("/image/2147748111.jpg"); /* Correct path */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
+    background-image: url("/image/2147748111.jpg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     /* color: white; */
   }
   /* Container Styles */

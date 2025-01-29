@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
     const monthlyExpenses = {};
     expenseTransactions.forEach((transaction) => {
       const date = new Date(transaction.date);
-      const month = date.toLocaleString("default", { month: "short" }); // E.g., "Jan", "Feb"
+      const month = date.toLocaleString("default", { month: "short" }); 
       monthlyExpenses[month] = (monthlyExpenses[month] || 0) + Math.abs(transaction.amount);
     });
 
