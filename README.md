@@ -101,9 +101,9 @@ Here are some screenshots of the application:
 - **Dashboard:**  
   ![Dashboard](public/screenshot/dashboard.jpg)
 - **Report:**  
-  ![Report](public/screenshot/report.png)
+  ![Report](public/screenshot/reports.png)
 - **Goal:**  
-  ![Goal](public/screenshot/goal.png)
+  ![Goal](public/screenshot/add-goal.png)
 - **Login:**  
   ![Login](public/screenshot/login.png)
 - **Registration:**  
