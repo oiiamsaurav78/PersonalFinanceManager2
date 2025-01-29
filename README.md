@@ -105,9 +105,9 @@ Here are some screenshots of the application:
 - **Goal:**  
   ![Goal](public/screenshot/add-goal.png)
 - **Login:**  
-  ![Login](public/screenshot/login.png)
+  ![Login](public/screenshot/Screenshot (150).png)
 - **Registration:**  
-  ![Registration](public/screenshots/registration.png)
+  ![Registration](public/screenshots/Screenshot (155).png)
 
 ## Author
 
