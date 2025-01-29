@@ -97,6 +97,8 @@ PERSONALFINANCEMANAGER/
 ## Screenshots
 
 Here are some screenshots of the application:
+- **Home:**  
+  ![Home](public/screenshot/home.png)
 
 - **Dashboard:**  
   ![Dashboard](public/screenshot/dashboard.png)
