@@ -107,7 +107,7 @@ Here are some screenshots of the application:
 - **Login:**  
   ![Login](public/screenshot/login.png)
 - **Registration:**  
-  ![Registration](public/screenshots/register.png)
+  ![Registration](public/screenshot/register.png)
 
 ## Author
 
