@@ -61,6 +61,7 @@ PERSONALFINANCEMANAGER/
 ├── routes/             # Route handlers (auth, transactions, categories, reports, savings goals)
 ├── views/              # EJS templates (dashboard, login, register, savings goals)
 ├── public/             # Static files (CSS, JS, images)
+├── public/screenshots/ # Screenshots of application pages
 ├── app.js              # Main application file
 ├── package.json        # Project metadata and dependencies
 ├── README.md           # Documentation
@@ -93,8 +94,22 @@ PERSONALFINANCEMANAGER/
 - `POST /savingsgoals/update/:id` - Update progress on a savings goal
 - `POST /savingsgoals/delete/:id` - Delete a savings goal
 
-##
+## Screenshots
+
+Here are some screenshots of the application:
+
+- **Dashboard:**  
+  ![Dashboard](public/screenshot/dashboard.jpg)
+- **Report:**  
+  ![Report](public/screenshot/report.png)
+- **Goal:**  
+  ![Goal](public/screenshot/goal.png)
+- **Login:**  
+  ![Login](public/screenshot/login.png)
+- **Registration:**  
+  ![Registration](public/screenshots/registration.png)
 
 ## Author
 
-Developed by **Saurav Kumar**  IN THIS ADD ONE SECTION SCREENSHOT AND SCREENSHOT ARE SAVED IN public/screenshot   give m updated readme
+Developed by **Saurav Kumar**
+
